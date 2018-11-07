@@ -300,8 +300,8 @@ Spleen & 0.022 & 0.042
 
 * DOSIS is capable of assessing patient-specific 3D dosimetry at voxel level by means of MC simulations and DPK convolution
 
-* The tool is now in testing process for different situations with colleagues from IEO (Milán) and University of Lund (Sweeden)
-  - analyzing effects of DPK convolutions when changing voxel size and activity distribution
+* The tool is now being implemented for different situations with colleagues from IEO (Milan) and University of Lund (Sweeden)
+  - analyzing the effects of DPK convolutions when changing voxel size and activity distribution in image resolution
   - both DPK\footnote{Not yet implemented in GUI.} and MC calculations are being performed by DOSIS
   - results are expected to be sent for publication by the end of the year
   
