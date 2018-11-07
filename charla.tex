@@ -98,6 +98,7 @@
 nuclear medicine}
 \author{\textbf{P. Pérez}\\
 IFEG-CONICET \& FAMAF-UNC, Argentina\\
+liifamirx.famaf.unc.edu.ar\\
 ~\\
 \textbf{\emph{VI Conferencia de Física Médica en la Frontera}}\\
 November 7, 2018}
@@ -145,7 +146,7 @@ medicine}}{Introduction: the need of a patient-specific dosimetric calculation a
 \item
   the doses involved in different techniques
 \item
-  the growth of nuclear medicine use in therapy
+  the growth of nuclear medicine use in therapy procedures
 \end{itemize}
 
 \vspace{.5cm}
@@ -245,18 +246,70 @@ medicine}}{Introduction: the need of a patient-specific dosimetric calculation a
 
 \end{frame}
 
-\begin{frame}{patient-specific dosimetry?}
+\begin{frame}{Patient-specific dosimetry?}
 \protect\hypertarget{patient-specific-dosimetry}{}
 
 \begin{itemize}
 \item
   \textbf{S-values:} only minor corrections can be made
 \item
+  \textcolor{white}{**DPK:** possible, limited for some regions (where there are no large density changes) and in progress solved when considering DPK performance in non-homogeneous media}
+\item
+  \textcolor{white}{**Monte Carlo:** the most accurate and precise}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Patient-specific dosimetry?}
+\protect\hypertarget{patient-specific-dosimetry-1}{}
+
+\begin{itemize}
+\item
+  \textbf{S-values:} only minor corrections can be made \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/no.png}
+\item
   \textbf{DPK:} possible, limited for some regions (where there are no
   large density changes) and \textcolor{red}{in progress} solved when
   considering DPK performance in non-homogeneous media
 \item
+  \textcolor{white}{**Monte Carlo:** the most accurate and precise}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Patient-specific dosimetry?}
+\protect\hypertarget{patient-specific-dosimetry-2}{}
+
+\begin{itemize}
+\item
+  \textbf{S-values:} only minor corrections can be made \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/no.png}
+\item
+  \textbf{DPK:} possible, limited for some regions (where there are no
+  large density changes) and \textcolor{red}{in progress} solved when
+  considering DPK performance in non-homogeneous media \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/si.png}
+\item
   \textbf{Monte Carlo:} the most accurate and precise
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Patient-specific dosimetry?}
+\protect\hypertarget{patient-specific-dosimetry-3}{}
+
+\begin{itemize}
+\item
+  \textbf{S-values:} only minor corrections can be made \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/no.png}
+\item
+  \textbf{DPK:} possible, limited for some regions (where there are no
+  large density changes) and \textcolor{red}{in progress} solved when
+  considering DPK performance in non-homogeneous media \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/si.png}
+\item
+  \textbf{Monte Carlo:} the most accurate and precise \hspace{.2cm}
+  \includegraphics[width=5mm,height=\textheight]{imgs/si.png}
 \end{itemize}
 
 \end{frame}
@@ -322,8 +375,8 @@ level}}{DOSIS: an integrated system for patient-specific dosimetry assessment at
   a model for estimating electrons DPK for different tissues have been
   developed\footnote{P. Pérez {\it et al.} Int. Journ. of Nucl. Med. Res. 3:45-55, 2016.}
 \item
-  voxelized kernels generated from radial distributions obtained from
-  Monte Carlo
+  voxelized kernels generated from radial distributions obtained by
+  Monte Carlo simulations
 \item
   capable of loading information from dual imaging techniques like
   PET-CT, SPECT-CT or SPECT-RMN
@@ -331,8 +384,8 @@ level}}{DOSIS: an integrated system for patient-specific dosimetry assessment at
 
 \end{frame}
 
-\begin{frame}{DPK MC calculated results}
-\protect\hypertarget{dpk-mc-calculated-results}{}
+\begin{frame}{DPK MC results: \emph{validating}}
+\protect\hypertarget{dpk-mc-results-validating}{}
 
 \begin{figure}
 \centering
@@ -346,8 +399,8 @@ uncertainties involved (right)
 
 \end{frame}
 
-\begin{frame}{DPK MC calculated results}
-\protect\hypertarget{dpk-mc-calculated-results-1}{}
+\begin{frame}{DPK MC results: tissues}
+\protect\hypertarget{dpk-mc-results-tissues}{}
 
 \begin{figure}
 \centering
@@ -369,7 +422,7 @@ sDPK (F) calculated discriminating primary and scattering contributions
 \item
   Activity distribution can be considered as an array of point sources
 \item
-  Deposite dose distribution can be calculated by means of integration
+  Deposited dose distribution can be calculated by means of integration
   of all of these sources
 \item
   This can be made by the convolution technique
@@ -398,7 +451,7 @@ D(\vec{r}) = \mathbb{K}_{D}(\vec{r}) \ast \mathbb{A}_{cum}(\vec{r}) = \int_{-\in
 \end{itemize}
 
 \begin{equation}
-D(\vec{r}) = \mathbb{F}^{-1}\{\mathbb{F}\{\mathcal{K}_{D}(i,j,k) \cdot \mathcal{A}_{cum}(i,j,k)\}\}
+D(\vec{r}) = \mathbb{F}^{-1}\{\mathbb{F}\{\mathcal{K}_{D}(i,j,k)\} \cdot \mathbb{F}\{\mathcal{A}_{cum}(i,j,k)\}\}
 \end{equation}
 
 And both Matlab and Python (among others) provide libraries to a fast
@@ -499,7 +552,7 @@ Comparison against bibliography on mathematical phantom
 \begin{center}
 \begin{tabular}{l c c}
 \hline
-Organ & Reference\footnote{Cherry, Sorenson \& Phelps.{\it Physics in Nuclear Medicine.}} & DOSIS \\
+Organ & Reference\footnote{Cherry, Sorenson \& Phelps. {\it Physics in Nuclear Medicine.}} & DOSIS \\
 \hline
 Liver & 1 & 1 \\
 Adrenals & 0.13 & 0.47 \\
@@ -540,8 +593,8 @@ Spleen & 0.022 & 0.042
 \item
   The developed tool is capable of perfoming planar dosimetry
 \item
-  DOSIS the assessment of patient-specific 3D dosimetry at voxel level
-  by means of MC simulations and DPK convolution
+  DOSIS is capable of assessing patient-specific 3D dosimetry at voxel
+  level by means of MC simulations and DPK convolution
 \item
   The tool is now in testing process for different situations with
   colleagues from IEO (Milán) and University of Lund (Sweeden)
@@ -552,9 +605,11 @@ Spleen & 0.022 & 0.042
     analyzing effects of DPK convolutions when changing voxel size and
     activity distribution
   \item
-    both DPK and MC calculations are being performed by DOSIS
+    both DPK\footnote{Not yet implemented in GUI.} and MC calculations
+    are being performed by DOSIS
   \item
-    results are expected to be sent for publication end of the year
+    results are expected to be sent for publication by the end of the
+    year
   \end{itemize}
 \end{itemize}
 
@@ -564,9 +619,13 @@ Spleen & 0.022 & 0.042
 \protect\hypertarget{uses-dpk}{}
 
 \begin{center}
-\includegraphics[width=.33\textwidth]{imgs/now1.jpg}
-\includegraphics[width=.33\textwidth]{imgs/now2.jpg}
-\includegraphics[width=.33\textwidth]{imgs/now3.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now1.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now2.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now3.jpg}
+\end{center}
+
+\begin{center}
+radioisotopes of $^{90}$Y, $^{131}$I and $^{177}$Lu
 \end{center}
 
 \end{frame}
@@ -576,6 +635,10 @@ Spleen & 0.022 & 0.042
 
 \begin{center}
 \includegraphics[width=.75\textheight]{imgs/now4.png}
+\end{center}
+
+\begin{center}
+3D enegy delivering on phantom
 \end{center}
 
 \end{frame}
@@ -592,6 +655,9 @@ Spleen & 0.022 & 0.042
   develope FLUKA implementation in order to add alpha emitters
 \item
   test the DOSIS with measurements and other calculation softwares
+\item
+  include machine learning and deep learning techniques for supporting
+  in segmentation and visualization
 \end{itemize}
 
 \end{frame}
@@ -602,11 +668,19 @@ Spleen & 0.022 & 0.042
 \begin{frame}{Visit us in Córdoba!}
 \protect\hypertarget{visit-us-in-cordoba}{}
 
+\includegraphics{imgs/visitenos.png}
+
+\end{frame}
+
+\begin{frame}{Thanks for all!}
+\protect\hypertarget{thanks-for-all}{}
+
 \includegraphics{imgs/liifamir.jpg}
 
 \begin{center}
 www.liifamirx.famaf.unc.edu.ar\\
-\vspace{.4cm}
+www.famaf.unc.edu.ar/$\sim$pperez1\\
+\vspace{.5cm}
 \footnotesize download this presentation from: github.com/pap84/oral-jfmf2018
 \end{center}
 

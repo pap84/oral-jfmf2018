@@ -3,6 +3,7 @@ title: "Advances on a computational tool for patient-specific dosimetry in nucle
 author: |
   | **P. Pérez**
   | IFEG-CONICET & FAMAF-UNC, Argentina
+  | liifamirx.famaf.unc.edu.ar
   |
   | ***VI Conferencia de Física Médica en la Frontera***
   | November 7, 2018
@@ -50,7 +51,7 @@ output:
 
 * the doses involved in different techniques
 
-* the growth of nuclear medicine use in therapy
+* the growth of nuclear medicine use in therapy procedures
 
 \vspace{.5cm}
 **Demands**
@@ -67,11 +68,11 @@ output:
 * **S-values**
   - \underline{Def:} Mean dose per unit cumulated activity
   - \underline{Res:} Organ, sub-organ, voxel
-  
+
 * **DPK convolution**
   - \underline{Def:} Radial distribution for mean dose around a point source
   - \underline{Res:} Voxel
-  
+
 * **Monte Carlo**
   - \underline{Def:} Monte Carlo radiation transport and delivered energy simulation
   - \underline{Res:} Organ, sub-organ, voxel
@@ -90,14 +91,37 @@ output:
   - \underline{Pros:} the most accurate calculation and the only one accepted for non-homogeneous media and complex geometries
   - \underline{Cons:} high computational cost $\leftarrow$ \textcolor{red}{working on hacking it!}
 
-## patient-specific dosimetry?
+## Patient-specific dosimetry?
 
-* **S-values:** only minor corrections can be made
+* **S-values:** only minor corrections can be made 
 
-* **DPK:** possible, limited for some regions (where there are no large density changes) and \textcolor{red}{in progress} solved when considering DPK performance in non-homogeneous media
+* \textcolor{white}{**DPK:** possible, limited for some regions (where there are no large density changes) and in progress solved when considering DPK performance in non-homogeneous media} 
 
-* **Monte Carlo:** the most accurate and precise
+* \textcolor{white}{**Monte Carlo:** the most accurate and precise}
 
+## Patient-specific dosimetry?
+
+* **S-values:** only minor corrections can be made \hspace{.2cm} ![](imgs/no.png){width=5mm}
+
+* **DPK:** possible, limited for some regions (where there are no large density changes) and \textcolor{red}{in progress} solved when considering DPK performance in non-homogeneous media 
+
+* \textcolor{white}{**Monte Carlo:** the most accurate and precise}
+
+## Patient-specific dosimetry?
+
+* **S-values:** only minor corrections can be made \hspace{.2cm} ![](imgs/no.png){width=5mm}
+
+* **DPK:** possible, limited for some regions (where there are no large density changes) and \textcolor{red}{in progress} solved when considering DPK performance in non-homogeneous media \hspace{.2cm} ![](imgs/si.png){width=5mm}
+
+* **Monte Carlo:** the most accurate and precise 
+
+## Patient-specific dosimetry?
+
+* **S-values:** only minor corrections can be made \hspace{.2cm} ![](imgs/no.png){width=5mm}
+
+* **DPK:** possible, limited for some regions (where there are no large density changes) and \textcolor{red}{in progress} solved when considering DPK performance in non-homogeneous media \hspace{.2cm} ![](imgs/si.png){width=5mm}
+
+* **Monte Carlo:** the most accurate and precise \hspace{.2cm} ![](imgs/si.png){width=5mm}
 
 ## Organ, sub-organ and voxel level?
 
@@ -131,11 +155,11 @@ Design and development of a computational tool devoted to:
   
 * a model for estimating electrons DPK for different tissues have been developed\footnote{P. Pérez {\it et al.} Int. Journ. of Nucl. Med. Res. 3:45-55, 2016.}
 
-* voxelized kernels generated from radial distributions obtained from Monte Carlo
+* voxelized kernels generated from radial distributions obtained by Monte Carlo simulations
 
 * capable of loading information from dual imaging techniques like PET-CT, SPECT-CT or SPECT-RMN
 
-## DPK MC calculated results
+## DPK MC results: *validating*
 
 \begin{figure}
 \centering
@@ -145,7 +169,7 @@ Design and development of a computational tool devoted to:
 
 sDPK (F) calculated compared with published data\footnote{Botta et al. Med. Phys. 38(7):3944-3954.} (left) and uncertainties involved (right)
 
-## DPK MC calculated results
+## DPK MC results: tissues
 
 \begin{figure}
 \centering
@@ -161,7 +185,7 @@ sDPK (F) calculated discriminating primary and scattering contributions (left) a
 
 * Activity distribution can be considered as an array of point sources
 
-* Deposite dose distribution can be calculated by means of integration of all of these sources
+* Deposited dose distribution can be calculated by means of integration of all of these sources
 
 * This can be made by the convolution technique
 
@@ -180,7 +204,7 @@ D(\vec{r}) = \mathbb{K}_{D}(\vec{r}) \ast \mathbb{A}_{cum}(\vec{r}) = \int_{-\in
 * Dose $D(\vec{r})$ results
 
 \begin{equation}
-D(\vec{r}) = \mathbb{F}^{-1}\{\mathbb{F}\{\mathcal{K}_{D}(i,j,k) \cdot \mathcal{A}_{cum}(i,j,k)\}\}
+D(\vec{r}) = \mathbb{F}^{-1}\{\mathbb{F}\{\mathcal{K}_{D}(i,j,k)\} \cdot \mathbb{F}\{\mathcal{A}_{cum}(i,j,k)\}\}
 \end{equation}
 
 And both Matlab and Python (among others) provide libraries to a fast solve of this equation through Fast Fourier Transform algorithm.
@@ -245,7 +269,7 @@ Comparison against bibliography on mathematical phantom
 \begin{center}
 \begin{tabular}{l c c}
 \hline
-Organ & Reference\footnote{Cherry, Sorenson \& Phelps.{\it Physics in Nuclear Medicine.}} & DOSIS \\
+Organ & Reference\footnote{Cherry, Sorenson \& Phelps. {\it Physics in Nuclear Medicine.}} & DOSIS \\
 \hline
 Liver & 1 & 1 \\
 Adrenals & 0.13 & 0.47 \\
@@ -274,25 +298,33 @@ Spleen & 0.022 & 0.042
 
 * The developed tool is capable of perfoming planar dosimetry
 
-* DOSIS the assessment of patient-specific 3D dosimetry at voxel level by means of MC simulations and DPK convolution
+* DOSIS is capable of assessing patient-specific 3D dosimetry at voxel level by means of MC simulations and DPK convolution
 
 * The tool is now in testing process for different situations with colleagues from IEO (Milán) and University of Lund (Sweeden)
   - analyzing effects of DPK convolutions when changing voxel size and activity distribution
-  - both DPK and MC calculations are being performed by DOSIS
-  - results are expected to be sent for publication end of the year
+  - both DPK\footnote{Not yet implemented in GUI.} and MC calculations are being performed by DOSIS
+  - results are expected to be sent for publication by the end of the year
   
 ## Uses: DPK
 
 \begin{center}
-\includegraphics[width=.33\textwidth]{imgs/now1.jpg}
-\includegraphics[width=.33\textwidth]{imgs/now2.jpg}
-\includegraphics[width=.33\textwidth]{imgs/now3.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now1.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now2.jpg}
+\includegraphics[width=.32\textwidth]{imgs/now3.jpg}
+\end{center}
+
+\begin{center}
+radioisotopes of $^{90}$Y, $^{131}$I and $^{177}$Lu
 \end{center}
 
 ## Uses: MC
 
 \begin{center}
 \includegraphics[width=.75\textheight]{imgs/now4.png}
+\end{center}
+
+\begin{center}
+3D enegy delivering on phantom
 \end{center}
 
 ## Next Work 
@@ -305,14 +337,20 @@ Spleen & 0.022 & 0.042
 
 * test the DOSIS with measurements and other calculation softwares
 
+* include machine learning and deep learning techniques for supporting in segmentation and visualization
+
 # Thanks!
 
 ## Visit us in Córdoba!
 
+![](imgs/visitenos.png)
+
+## Thanks for all!
 ![](imgs/liifamir.jpg)
 
 \begin{center}
 www.liifamirx.famaf.unc.edu.ar\\
-\vspace{.4cm}
+www.famaf.unc.edu.ar/$\sim$pperez1\\
+\vspace{.5cm}
 \footnotesize download this presentation from: github.com/pap84/oral-jfmf2018
 \end{center}
