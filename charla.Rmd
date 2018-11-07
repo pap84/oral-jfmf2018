@@ -198,18 +198,26 @@ And both Matlab and Python (among others) provide libraries to a fast solve of t
 ## Planar dosimetry GUI: *main*
 
 ![](imgs/planar-gui.png)
+
 ## Planar dosimetry GUI: *rois*
 
 ![](imgs/planar-rois.png)
+
 ## Planar dosimetry GUI: *whole body*
 
-![](imgs/planar-wb.png)
+\begin{center}
+\includegraphics[height=.8\textheight]{imgs/planar-wb.png}
+\end{center}
 
 ## Planar dosimetry GUI: *curves*
 
 ![](imgs/planar-curves.png)
 
-## 3D dosimetry: *main*
+## 3D dosimetry chartflow
+
+![](imgs/3d-chartflow.png)
+
+## 3D dosimetry: *GUI*
 
 ![](imgs/3d-main.png)
 
@@ -262,7 +270,7 @@ Spleen & 0.022 & 0.042
 
 # Final considerations
 
-# DOSIS up today
+## DOSIS today
 
 * The developed tool is capable of perfoming planar dosimetry
 
@@ -284,7 +292,7 @@ Spleen & 0.022 & 0.042
 ## Uses: MC
 
 \begin{center}
-\includegraphics[width=.75\textheight]{imgs/now4.jpg}
+\includegraphics[width=.75\textheight]{imgs/now4.png}
 \end{center}
 
 ## Next Work 
@@ -301,11 +309,10 @@ Spleen & 0.022 & 0.042
 
 ## Visit us in Córdoba!
 
-
 ![](imgs/liifamir.jpg)
 
 \begin{center}
-www.liifamirx.famaf.unc.edu.ar
-\vspace
-{\footnotesize download this presentation from: github.com/pap84/oral-jfmf2018}
+www.liifamirx.famaf.unc.edu.ar\\
+\vspace{.4cm}
+\footnotesize download this presentation from: github.com/pap84/oral-jfmf2018
 \end{center}
