@@ -296,3 +296,16 @@ Spleen & 0.022 & 0.042
 * develope FLUKA implementation in order to add alpha emitters
 
 * test the DOSIS with measurements and other calculation softwares
+
+# Thanks!
+
+## Visit us in Córdoba!
+
+
+![](imgs/liifamir.jpg)
+
+\begin{center}
+www.liifamirx.famaf.unc.edu.ar
+\vspace
+{\footnotesize download this presentation from: github.com/pap84/oral-jfmf2018}
+\end{center}
